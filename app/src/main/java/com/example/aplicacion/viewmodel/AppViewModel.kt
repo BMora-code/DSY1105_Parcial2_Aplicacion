@@ -1,12 +1,16 @@
-package com.example.simplemanager.viewmodel
+package com.example.aplicacion.viewmodel
 
 import android.content.Context
+import android.graphics.Bitmap
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavHostController
-import com.example.simplemanager.data.UserPreferencesRepository
-import com.example.simplemanager.data.dataStore
-import com.example.simplemanager.navigation.Screen
+import com.example.aplicacion.data.UserPreferencesRepository
+import com.example.aplicacion.data.dataStore
+import com.example.aplicacion.navigation.Screen
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
@@ -25,9 +29,25 @@ class AppViewModel(private val repo: UserPreferencesRepository) : ViewModel() {
             Pair(false, "")
         )
 
+    // Estado del personaje animado (color o "pixel" simulado)
+    var characterVariantIndex by mutableStateOf(0)
+        private set
+
+    // Estado de la imagen capturada (Bitmap en memoria)
+    var capturedImage by mutableStateOf<Bitmap?>(null)
+
+    // Función para cambiar la variante (simula mantener la acción al regresar)
+    fun nextCharacterVariant() {
+        characterVariantIndex = (characterVariantIndex + 1) % 3
+    }
+
     fun logout(navController: NavHostController) {
         viewModelScope.launch {
             repo.clearSession() // Cierra la sesión
+            // Limpiamos también el estado en memoria al cerrar sesión
+            capturedImage = null
+            characterVariantIndex = 0
+            
             navController.navigate(Screen.Login.route) {
                 // Limpia la pila de navegación para evitar volver con el botón atrás
                 popUpTo(0) { inclusive = true }

@@ -1,4 +1,4 @@
-package com.example.simplemanager.ui.screens
+package com.example.aplicacion.ui.screens
 
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
@@ -18,9 +18,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import com.example.simplemanager.navigation.Screen
-import com.example.simplemanager.ui.components.ValidatedTextField
-import com.example.simplemanager.viewmodel.AuthViewModel
+import com.example.aplicacion.navigation.Screen
+import com.example.aplicacion.ui.components.ValidatedTextField
+import com.example.aplicacion.viewmodel.AuthViewModel
 
 /**
  * Pantalla de Login.

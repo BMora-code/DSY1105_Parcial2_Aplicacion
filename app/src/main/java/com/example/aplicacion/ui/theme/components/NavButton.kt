@@ -1,4 +1,4 @@
-package com.example.simplemanager.ui.components
+package com.example.aplicacion.ui.components
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.tween

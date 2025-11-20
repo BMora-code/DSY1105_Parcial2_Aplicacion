@@ -1,4 +1,4 @@
-package com.example.simplemanager.viewmodel
+package com.example.aplicacion.viewmodel
 
 import android.content.Context
 import androidx.compose.runtime.getValue
@@ -6,10 +6,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.simplemanager.data.UserPreferencesRepository
-import com.example.simplemanager.data.dataStore
-import com.example.simplemanager.utils.ValidationState
-import com.example.simplemanager.utils.Validators
+import com.example.aplicacion.data.UserPreferencesRepository
+import com.example.aplicacion.data.dataStore
+import com.example.aplicacion.utils.ValidationState
+import com.example.aplicacion.utils.Validators
 import kotlinx.coroutines.launch
 
 /**

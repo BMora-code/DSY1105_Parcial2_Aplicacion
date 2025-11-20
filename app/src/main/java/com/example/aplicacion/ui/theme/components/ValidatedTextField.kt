@@ -1,4 +1,4 @@
-package com.example.simplemanager.ui.components
+package com.example.aplicacion.ui.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
-import com.example.simplemanager.utils.ValidationState
+import com.example.aplicacion.utils.ValidationState
 
 /**
  * Campo de texto con validación en tiempo real y retroalimentación visual.

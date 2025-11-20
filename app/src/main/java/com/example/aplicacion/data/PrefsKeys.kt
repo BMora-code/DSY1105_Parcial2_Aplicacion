@@ -1,4 +1,4 @@
-package com.example.simplemanager.data
+package com.example.aplicacion.data
 
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey

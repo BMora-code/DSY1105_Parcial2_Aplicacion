@@ -1,4 +1,4 @@
-package com.example.simplemanager.navigation
+package com.example.aplicacion.navigation
 
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
@@ -10,8 +10,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.simplemanager.ui.screens.*
-import com.example.simplemanager.viewmodel.AppViewModel
+import com.example.aplicacion.ui.screens.*
+import com.example.aplicacion.viewmodel.AppViewModel
 
 /**
  * Componente principal que maneja la navegación y el guard de sesión.
@@ -20,6 +20,8 @@ import com.example.simplemanager.viewmodel.AppViewModel
 fun AppNavigation() {
     val context = LocalContext.current
     val navController = rememberNavController()
+    // INYECTAMOS EL VIEWMODEL AQUÍ (Scope de toda la navegación)
+    // Esto asegura que sea LA MISMA instancia para todas las pantallas dentro del NavHost
     val appViewModel: AppViewModel = viewModel(factory = AppViewModel.factory(context))
 
     // Leer el estado de la sesión para decidir la ruta inicial
@@ -40,10 +42,11 @@ fun AppNavigation() {
             startDestination = currentStartDestination
         ) {
             // Rutas principales
+            // Pasamos el 'appViewModel' existente a las pantallas que lo necesitan
             composable(Screen.Login.route) { LoginScreen(navController) }
             composable(Screen.Register.route) { RegisterScreen(navController) }
-            composable(Screen.Home.route) { HomeScreen(navController) }
-            composable(Screen.Profile.route) { ProfileScreen(navController) }
+            composable(Screen.Home.route) { HomeScreen(navController, appViewModel) } // Pasamos VM
+            composable(Screen.Profile.route) { ProfileScreen(navController, appViewModel) } // Pasamos VM
             composable(Screen.Location.route) { LocationScreen(navController) }
         }
     }

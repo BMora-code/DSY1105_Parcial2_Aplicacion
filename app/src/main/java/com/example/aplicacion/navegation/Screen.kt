@@ -1,4 +1,4 @@
-package com.example.simplemanager.navigation
+package com.example.aplicacion.navigation
 
 /**
  * Define las rutas de navegación de la aplicación.

@@ -1,18 +1,20 @@
-// --- REEMPLAZA TODO EL CONTENIDO DEL ARCHIVO CON ESTO ---
+// Archivo: build.gradle.kts (Module :app)
+// UBICACIÓN: Carpeta Aplicacion/app/
+// CONTENIDO COMPLETO de la configuración de la aplicación y sus dependencias.
 
 plugins {
+    // Aquí, los plugins se aplican SIN 'apply false'.
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.example.simplemanager"
-    // Usamos compileSdk 34 (versión estable) para evitar problemas de compatibilidad
+    namespace = "com.example.aplicacion"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.simplemanager"
+        applicationId = "com.example.aplicacion"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -41,7 +43,6 @@ android {
         compose = true
     }
     composeOptions {
-        // Aseguramos una versión de Kotlin Compiler compatible con el código
         kotlinCompilerExtensionVersion = "1.4.3"
     }
 }
@@ -64,23 +65,12 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    // --- DEPENDENCIAS CRÍTICAS (Solucionan los errores Unresolved Reference) ---
-
-    // 1. DataStore Preferences (SOLUCIONA todos los errores de 'datastore' y 'preferences')
+    // --- DEPENDENCIAS CRÍTICAS ---
     implementation("androidx.datastore:datastore-preferences:1.0.0")
-
-    // 2. Navigation Compose (Ya tenías esta, pero la mantenemos con la versión estable)
     implementation("androidx.navigation:navigation-compose:2.6.0")
-
-    // 3. ViewModel Compose (Soluciona errores de Factory)
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
-
-    // 4. Icons Extended (SOLUCIONA 'Logout', 'Mail')
     implementation("androidx.compose.material:material-icons-extended:1.5.4")
-
-    // 5. Compose Animation
     implementation("androidx.compose.animation:animation:1.4.3")
-
 
     // Dependencias de Testing
     testImplementation("junit:junit:4.13.2")

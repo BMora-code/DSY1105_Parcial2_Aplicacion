@@ -1,4 +1,4 @@
-package com.example.simplemanager.viewmodel
+package com.example.aplicacion.viewmodel
 
 import android.location.Location
 import androidx.compose.runtime.getValue

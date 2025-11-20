@@ -1,4 +1,4 @@
-package com.example.simplemanager.ui.screens
+package com.example.aplicacion.ui.screens
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import com.example.simplemanager.viewmodel.LocationViewModel
+import com.example.aplicacion.viewmodel.LocationViewModel
 
 /**
  * Pantalla de Ubicación, solicita permisos de GPS (Recurso Nativo 1).

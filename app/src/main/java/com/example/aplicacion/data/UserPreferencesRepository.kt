@@ -1,4 +1,4 @@
-package com.example.simplemanager.data
+package com.example.aplicacion.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore

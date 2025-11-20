@@ -1,4 +1,4 @@
-package com.example.simplemanager.ui.screens
+package com.example.aplicacion.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
@@ -16,16 +16,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import com.example.simplemanager.navigation.Screen
-import com.example.simplemanager.ui.components.NavButton
-import com.example.simplemanager.viewmodel.AppViewModel
+import com.example.aplicacion.navigation.Screen
+import com.example.aplicacion.ui.components.NavButton
+import com.example.aplicacion.viewmodel.AppViewModel
 
 /**
  * Pantalla de Menú Principal.
+ * Se actualiza para recibir el AppViewModel compartido.
  */
 @Composable
-fun HomeScreen(navController: NavHostController) {
-    val appViewModel: AppViewModel = viewModel(factory = AppViewModel.factory(LocalContext.current))
+fun HomeScreen(navController: NavHostController, appViewModel: AppViewModel) { // <-- Se añade el parámetro
     val session by appViewModel.sessionState.collectAsState()
     val userEmail = session.second
 

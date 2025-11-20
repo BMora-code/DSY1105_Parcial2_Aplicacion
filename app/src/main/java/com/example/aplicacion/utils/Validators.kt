@@ -1,4 +1,4 @@
-package com.example.simplemanager.utils
+package com.example.aplicacion.utils
 
 import java.util.regex.Pattern
 

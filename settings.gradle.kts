@@ -1,12 +1,10 @@
+// Archivo: settings.gradle.kts
+// UBICACIÓN: RAÍZ del proyecto (Carpeta Aplicacion/)
+// Este archivo COMPLETO enlaza el módulo con el proyecto.
+
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
         gradlePluginPortal()
     }
@@ -19,6 +17,6 @@ dependencyResolutionManagement {
     }
 }
 
+// Esta línea es la que hace que Gradle reconozca la carpeta 'app'.
 rootProject.name = "Aplicacion"
 include(":app")
- 
